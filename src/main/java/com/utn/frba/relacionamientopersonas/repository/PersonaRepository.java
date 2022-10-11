@@ -1,4 +1,7 @@
 package com.utn.frba.relacionamientopersonas.repository;
 
-public interface PersonaRepository {
+import com.utn.frba.relacionamientopersonas.model.persona.Persona;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PersonaRepository extends JpaRepository<Persona,Integer> {
 }
