@@ -1,10 +1,17 @@
 package com.utn.frba.relacionamientopersonas.model.memoryRepos;
 
+import com.utn.frba.relacionamientopersonas.controller.DelegacionController;
 import com.utn.frba.relacionamientopersonas.model.delegacion.Delegacion;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class RepositorioDelegaciones {
+
+    @Autowired
+    DelegacionController delegaciondb;
 
     private List<Delegacion> delegaciones;
     private static RepositorioDelegaciones instance;

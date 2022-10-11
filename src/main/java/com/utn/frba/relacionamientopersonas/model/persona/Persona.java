@@ -1,8 +1,15 @@
 package com.utn.frba.relacionamientopersonas.model.persona;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
+@Entity
 public class Persona {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
 
     private String dni;
 

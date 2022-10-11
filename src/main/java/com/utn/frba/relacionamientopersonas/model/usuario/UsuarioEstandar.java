@@ -3,11 +3,17 @@ package com.utn.frba.relacionamientopersonas.model.usuario;
 import com.utn.frba.relacionamientopersonas.model.delegacion.Delegacion;
 import com.utn.frba.relacionamientopersonas.model.delegacion.Estado;
 import com.utn.frba.relacionamientopersonas.model.memoryRepos.RepositorioDelegaciones;
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToMany;
 
 import java.util.List;
 
+@Entity
+@DiscriminatorValue("Estandar")
 public class UsuarioEstandar extends Usuario{
 
+    @ManyToMany
     private List<Delegacion> delegaciones;
 
     public List<Delegacion> getDelegaciones() {
