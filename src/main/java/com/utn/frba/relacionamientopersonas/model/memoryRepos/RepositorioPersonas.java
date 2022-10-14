@@ -6,7 +6,7 @@ import com.utn.frba.relacionamientopersonas.model.persona.Persona;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
+import java.util.*;
 
 @Component
 public class RepositorioPersonas {
@@ -14,7 +14,7 @@ public class RepositorioPersonas {
     @Autowired
     PersonaController personadb;
 
-    private List<Persona> personas;
+    private ArrayList<Persona> personas = new ArrayList<>();
 
     private static RepositorioPersonas instance;
 
@@ -27,7 +27,7 @@ public class RepositorioPersonas {
         return personas;
     }
 
-    public void setPersonas(List<Persona> personas) {
+    public void setPersonas(ArrayList<Persona> personas) {
         this.personas = personas;
     }
 

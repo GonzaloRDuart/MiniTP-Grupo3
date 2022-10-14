@@ -27,7 +27,7 @@ public class Persona {
 
     public Persona(){}
 
-    public void Persona(String dni, String nombre, String apellido, LocalDate fechaNacimiento, String ciudad, String localidad, String foto){
+    public Persona(String dni, String nombre, String apellido, LocalDate fechaNacimiento, String ciudad, String localidad, String foto){
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
