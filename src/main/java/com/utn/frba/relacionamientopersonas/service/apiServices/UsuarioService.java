@@ -5,7 +5,7 @@ import com.utn.frba.relacionamientopersonas.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
-
+/*
 @Service
 public class UsuarioService implements IUsuarioService{
 
@@ -29,4 +29,4 @@ public class UsuarioService implements IUsuarioService{
         Usuario usuario = usuarioRepository.findById(id).orElse(null);
         return usuario;
     }
-}
+}*/

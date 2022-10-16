@@ -1,5 +1,5 @@
 package CargaPersonasTest;
-
+/*
 import com.utn.frba.relacionamientopersonas.model.memoryRepos.RepositorioPersonas;
 import com.utn.frba.relacionamientopersonas.model.persona.DataPersonas;
 import org.junit.jupiter.api.Assertions;
@@ -16,3 +16,4 @@ public class CargaPersonasTest {
         Assertions.assertEquals(r.getPersonas().size(),2);
     }
 }
+*/

@@ -5,7 +5,7 @@ import com.utn.frba.relacionamientopersonas.repository.PersonaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.List;/*
 @Service
 public class PersonaService implements IPersonaService {
     @Autowired
@@ -33,4 +33,4 @@ public class PersonaService implements IPersonaService {
         Persona persona = personaRepository.findById(id).orElse(null);
         return persona;
     }
-}
+}*/

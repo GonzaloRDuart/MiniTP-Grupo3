@@ -1,14 +1,13 @@
 package com.utn.frba.relacionamientopersonas.controller;
 
 import com.utn.frba.relacionamientopersonas.model.delegacion.Delegacion;
-import com.utn.frba.relacionamientopersonas.service.apiServices.IDelegacionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @RestController
 public class DelegacionController {
-
+/*
     @Autowired
     private IDelegacionService interfazDelegacion;
 
@@ -26,5 +25,5 @@ public class DelegacionController {
         interfazDelegacion.saveDelegacion(delegacion);
         return "La delegacion fue creada correctamente";
     }
-
+*/
 }

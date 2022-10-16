@@ -1,47 +1,39 @@
 package com.utn.frba.relacionamientopersonas.model.usuario;
 
 import com.utn.frba.relacionamientopersonas.model.persona.Persona;
-import jakarta.persistence.*;
+import com.utn.frba.relacionamientopersonas.model.rol.Rol;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
+import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
+
+@Getter @Setter
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "tipo_usuario",discriminatorType = DiscriminatorType.STRING)
-public abstract class Usuario {
+public class Usuario {
     @Id
-    @GeneratedValue(generator="uuid")
-    @GenericGenerator(name="uuid", strategy="uuid2")
-    private String id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     private String nombreUsuario;
 
     private String password;
-    @OneToOne
+
+    private Boolean enable;
+
+    @Transient
     private Persona persona;
 
-    public String getNombreUsuario() {
-        return nombreUsuario;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "roles_usuarios", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "rol_id"))
+    private Set<Rol> roles;
+
+    public Usuario(String nombreUsuario, String password, List grantList) {
     }
 
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void login(){
-    }
-
-    public void logout(){
+    public Usuario() {
 
     }
 }

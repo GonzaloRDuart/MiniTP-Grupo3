@@ -10,7 +10,7 @@ import java.util.List;
 @Component
 public class RepositorioDelegaciones {
 
-    @Autowired
+  /* @Autowired
     DelegacionController delegaciondb;
 
     private List<Delegacion> delegaciones;
@@ -31,5 +31,5 @@ public class RepositorioDelegaciones {
 
     public void addDelegacion(Delegacion delegacion){
         this.delegaciones.add(delegacion);
-    }
+    }*/
 }

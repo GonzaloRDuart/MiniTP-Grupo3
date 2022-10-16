@@ -1,0 +1,51 @@
+@import "../libs/bootstrap/scss/bootstrap";
+@import "../libs/bootstrap/scss/buttons";
+
+///////////////////////////////
+/// 1. Colores personalizados //
+
+$principal: #6BC0EC;
+$secundario: #84d2f9;
+$variante: #a9e2ff;
+$clasico: white;
+
+//////////////////////////////////
+/// Modificacion de variables bootstrap //
+
+$info: $principal;
+$btn-border-radius: 5rem;
+.btn-info{
+    background-color: $principal;
+    border-radius: 5rem;
+    -webkit-border-radius: 5rem;
+    -moz-border-radius: 5rem;
+    -ms-border-radius: 5rem;
+    -o-border-radius: 5rem;
+    color: $clasico;
+    border-color: $principal;
+    font-weight: bold;
+    
+}
+
+.btn-info:hover{
+    background-color: $secundario;
+    color:$clasico;
+    border-color: $secundario;
+    font-weight: bold;
+}
+
+.btn-info:active{
+    background-color: $variante;
+    color:$clasico;
+    border-color: $variante;
+    font-weight: bold;
+}
+
+.btn-light{
+    border-radius: 5rem;
+    -webkit-border-radius: 5rem;
+    -moz-border-radius: 5rem;
+    -ms-border-radius: 5rem;
+    -o-border-radius: 5rem;
+    font-weight: bold;
+}

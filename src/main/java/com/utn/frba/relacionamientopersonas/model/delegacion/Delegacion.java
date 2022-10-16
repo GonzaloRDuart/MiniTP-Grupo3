@@ -2,16 +2,16 @@ package com.utn.frba.relacionamientopersonas.model.delegacion;
 
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.utn.frba.relacionamientopersonas.model.usuario.Usuario;
-import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 
 @Entity
 public class Delegacion {
 
     @Id
-    @GeneratedValue(generator="uuid")
-    @GenericGenerator(name="uuid",strategy = "uuid2")
-    private String id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
     @Transient //Many To Many
     private Usuario autorizante;
     @Transient // Many To Many

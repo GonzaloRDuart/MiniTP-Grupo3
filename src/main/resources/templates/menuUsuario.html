@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Registro Único de Audiencias</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="icon" type="image/x-icon" href="https://audiencias.mininterior.gob.ar/assets/favicon-e0fe252ce19f55e9c9d41bffb834f7cf209bb6b7e882a158bbeb1d7a91f36a12.ico">
+      <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="../static/css/estilos.css" th:href="@{/css/estilos.css}">
+      <link rel="stylesheet" type="text/css" href="../static/css/styles.css.css" th:href="@{/css/styles.css}">
+  
+</head>
+   <body class="main home ">      
+   
+
+      <div id="header">
+         <div id="header-shadow">
+            <div id="header-container">
+               <div id="header-content">
+                  <div class="both-logos">
+                     <a href="https://github.com/GonzaloRDuart/MiniTP-Grupo3">
+                        <img src="static/img/logo_argentina-blanco.svg" id="logo-ministerio" th:src="@{/img/logo_argentina-blanco.svg}">
+                     </a>
+                     <form th:action="@{/logout}" method="post">
+                        <a th:href="@{/index.html}" class="logo-subsecretaria btn btn-light"> CERRAR SESIÓN</a>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>  
+         <div class="jumbotron_bar">
+            <div class="container">
+            <div class="row"><div class="col-md-12">
+            <ol class="breadcrumb">
+               <li><a href="/">Inicio</a></li>
+               <li><a href="">Registrarse </a></li>
+               <h1 th:inline="text">[[${#httpServletRequest.remoteUser}]]</h1>
+               <li class="active">Menú</li>
+            </ol>
+         </div>
+      </div>
+      </div>
+      </div>
+         <div class="buttons-menu">
+            <div class="buttons-content">
+            <div>
+            <a href="./actualizarDatos.html" class="btn btn-info button-update">ACTUALIZAR DATOS</a>
+            <a href="./estadoDelegacion.html" class="btn btn-info button-update">ESTADO DELEGACIÓN</a>
+         </div>
+         <div>
+            <a href="./autorizacion.html" class="btn btn-info button-update">INICIAR DELEGACIÓN</a>
+            <a href="./solicitudes.html" class="btn btn-info button-update">SOLICITUDES</a>
+         </div>
+      </div>
+         </div>
+        <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+
+   </body>
+</html>

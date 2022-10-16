@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Registro Único de Audiencias</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="icon" type="image/x-icon" href="https://audiencias.mininterior.gob.ar/assets/favicon-e0fe252ce19f55e9c9d41bffb834f7cf209bb6b7e882a158bbeb1d7a91f36a12.ico">
+      <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+       <link rel="stylesheet" type="text/css" href="../static/css/estilos.css" th:href="@{/css/estilos.css}">
+       <link rel="stylesheet" type="text/css" href="../static/css/styles.css.css" th:href="@{/css/styles.css}">
+  
+</head>
+   <body class="main home ">      
+   
+    <div id="header">
+         <div id="header-shadow">
+            <div id="header-container">
+               <div id="header-content">
+                  <div class="both-logos">
+                     <a href="https://github.com/GonzaloRDuart/MiniTP-Grupo3">
+                         <img src="static/img/logo_argentina-blanco.svg" id="logo-ministerio" th:src="@{/img/logo_argentina-blanco.svg}">
+                     </a>
+
+                  </div>
+               </div>
+            </div>
+         </div>  
+          <div class="jumbotron_bar">
+      <div class="container">
+      <div class="row"><div class="col-md-12">
+      <ol class="breadcrumb">
+         <li><a href="/">Inicio</a></li>
+
+         <li class="active">Iniciar Sesión</li>
+      </ol>
+   </div>
+</div>
+</div>
+</div>
+      </div>
+
+      <div id="searcher" class="main-container">
+  <div class="buttons-body">
+
+   <div class="form-v5">
+      <div class="page-content">
+         <div class="form-v5-content">
+            <form class="form-detail" th:action="@{/login}" method="post">
+               <h2>Ingresá con tu usuario y contraseña</h2>
+               <div class="form-row">
+                  <label for="username">Usuario<span class="asterisco">*</span> </label>
+                  <input type="text" name="username"  class="input-text" >
+               </div>
+               <div class="form-row">
+                  <label for="password">Contraseña<span class="asterisco">*</span></label>
+                  <input type="password" name="password"  class="input-text"  >
+               </div>
+               <div class="form-row-last">
+                  <input  type="submit" name="continuar" class="btn btn-info" value="INICIAR SESIÓN">
+               </div>
+            </form>
+             <div th:if="${param.error}" class="alert alert-danger" role="alert">
+                 Invalid username and password.
+             </div>
+             <div th:if="${param.logout}" class="alert alert-success" role="alert">
+                 You have been logged out.
+             </div>
+         </div>
+      </div>
+   </div>
+
+    </div>
+</div>
+      </div>
+
+        </div>
+        
+        <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+
+   </body>
+</html>

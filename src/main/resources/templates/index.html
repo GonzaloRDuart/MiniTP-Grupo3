@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Registro Único de Audiencias</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="https://audiencias.mininterior.gob.ar/assets/favicon-e0fe252ce19f55e9c9d41bffb834f7cf209bb6b7e882a158bbeb1d7a91f36a12.ico">
+    <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/estilos.css"> <!--Etilos Bootstrap-->
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+    <link rel="stylesheet" type="text/css" href="static/css/estilos.css" th:href="@{/css/estilos.css}">
+    <link rel="stylesheet" type="text/css" href="static/css/styles.css" th:href="@{/css/styles.css}">
+
+</head>
+<body class="main home ">
+
+<div id="header">
+    <div id="header-shadow">
+        <div id="header-container">
+            <div id="header-content">
+                <div class="both-logos">
+                    <a href="https://github.com/GonzaloRDuart/MiniTP-Grupo3">
+                        <img src="static/img/logo_argentina-blanco.svg" id="logo-ministerio" th:src="@{/img/logo_argentina-blanco.svg}">
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="searcher" class="main-container">
+    <div class="buttons-body">
+
+        <div class="search-container">
+
+            <div class="search-background-filter">
+                <div class="subheader-container">
+
+                    <div class="search-content">
+                        <div class="search-title">
+                            Relacionamiento del <br>Registro de las Personas
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="buttons p-3 m-0 border-0 bd-example">
+            <div>
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="botones">
+                            <a th:href="@{/registrarse}" class="btn btn-info">REGISTRARSE</a>
+                            <a th:href="@{/iniciarSesion}" class="btn btn-info">INICIAR SESIÓN</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>

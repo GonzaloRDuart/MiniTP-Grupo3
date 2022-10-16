@@ -1,9 +1,16 @@
 package com.utn.frba.relacionamientopersonas.model.persona;
 
-import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.LocalDate;
 
+
+@Getter @Setter
 @Entity
 public class Persona {
 

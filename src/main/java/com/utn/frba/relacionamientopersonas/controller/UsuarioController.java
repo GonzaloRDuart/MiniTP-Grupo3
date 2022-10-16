@@ -1,14 +1,13 @@
 package com.utn.frba.relacionamientopersonas.controller;
 
 import com.utn.frba.relacionamientopersonas.model.usuario.Usuario;
-import com.utn.frba.relacionamientopersonas.service.apiServices.IUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @RestController
 public class UsuarioController {
-    @Autowired
+  /*  @Autowired
     private IUsuarioService interfazUsuario;
 
     @GetMapping("/usuario")
@@ -25,6 +24,6 @@ public class UsuarioController {
         interfazUsuario.saveUsuario(usuario);
         return "El usuario fue creado correctamente";
     }
-
+*/
 
 }
