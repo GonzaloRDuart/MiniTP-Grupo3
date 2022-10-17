@@ -1,6 +1,7 @@
 package com.utn.frba.relacionamientopersonas.service;
 
 
+import com.utn.frba.relacionamientopersonas.controller.dto.UsuarioRegistro;
 import com.utn.frba.relacionamientopersonas.model.rol.Rol;
 import com.utn.frba.relacionamientopersonas.model.usuario.Usuario;
 import com.utn.frba.relacionamientopersonas.repository.UsuarioRepository;
@@ -23,17 +24,14 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     UsuarioRepository userRepository;
 
- /*   @Autowired
+    @Autowired
     BCryptPasswordEncoder passwordEncoder;
 
-
-    public Usuario guardar(Usuario usuario) {
-        Usuario usuarioGuardar = new Usuario(usuario.getNombreUsuario(),
-                passwordEncoder.encode(usuario.getPassword()), Arrays.asList(new Rol("ROLE_USER")));
-        return userRepository.save(usuario);
-    }*/
-
-
+    public Usuario guardar(UsuarioRegistro usuario) {
+        Usuario usuarioGuardar = new Usuario(usuario.getNombre(),
+                passwordEncoder.encode("1234"), Arrays.asList(new Rol("ROLE_USER")));
+        return userRepository.save(usuarioGuardar);
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

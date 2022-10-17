@@ -7,6 +7,7 @@ import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
@@ -23,14 +24,16 @@ public class Usuario {
 
     private Boolean enable;
 
-    @Transient
+    @OneToOne
     private Persona persona;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "roles_usuarios", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "rol_id"))
-    private Set<Rol> roles;
+    private List<Rol> roles;
 
-    public Usuario(String nombreUsuario, String password, List grantList) {
+    public Usuario(String nombreUsuario, String password, List<Rol> roles) {
+        this.nombreUsuario = nombreUsuario;
+        this.password = password;
     }
 
     public Usuario() {

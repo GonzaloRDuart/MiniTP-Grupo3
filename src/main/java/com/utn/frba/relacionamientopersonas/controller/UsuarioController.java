@@ -1,29 +1,41 @@
 package com.utn.frba.relacionamientopersonas.controller;
 
-import com.utn.frba.relacionamientopersonas.model.usuario.Usuario;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import com.utn.frba.relacionamientopersonas.controller.dto.UsuarioRegistro;
+import com.utn.frba.relacionamientopersonas.service.UserDetailsServiceImpl;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.util.List;
-@RestController
+import javax.naming.Binding;
+import javax.validation.Valid;
+
+@Controller
 public class UsuarioController {
-  /*  @Autowired
-    private IUsuarioService interfazUsuario;
 
-    @GetMapping("/usuario")
-    public List<Usuario> getUsuario(){return interfazUsuario.getUsuario();}
+    private UserDetailsServiceImpl usuarioServicio;
 
-    @DeleteMapping("usuario/eliminar/{id}")
-    public String deleteUsuario(@PathVariable Integer id) {
-        interfazUsuario.deleteUsuario(id);
-        return "El usuario fue eliminado correctamente";
+    public UsuarioController(UserDetailsServiceImpl usuarioServicio) {
+        super();
+        this.usuarioServicio = usuarioServicio;
     }
 
-    @PostMapping("/usuario/crear")
-    public String saveUsuario(@RequestBody Usuario usuario) {
-        interfazUsuario.saveUsuario(usuario);
-        return "El usuario fue creado correctamente";
+    @ModelAttribute("usuario")
+    public UsuarioRegistro retornarNuevoUsuarioRegistroDTO() {
+        return new UsuarioRegistro();
     }
-*/
+
+    /*@GetMapping("/registrarse")
+    public String mostrarFormularioDeRegistro() {
+        return "registrarse";
+    }*/
+
+    @PostMapping("/registrarse")
+    public String registrarCuentaDeUsuario(@ModelAttribute("usuario") UsuarioRegistro registroDTO) {
+        usuarioServicio.guardar(registroDTO);
+        return "redirect:/registrarse?exito";
+    }
 
 }
