@@ -1,5 +1,5 @@
 package com.utn.frba.relacionamientopersonas.model.persona;
-/*
+
 import com.utn.frba.relacionamientopersonas.model.memoryRepos.RepositorioPersonas;
 
 import org.json.simple.parser.JSONParser;
@@ -90,4 +90,4 @@ public class DataPersonas {
     }
 
 
-}*/
+}

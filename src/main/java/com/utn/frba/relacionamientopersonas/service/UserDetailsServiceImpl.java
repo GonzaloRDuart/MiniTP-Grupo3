@@ -1,6 +1,6 @@
 package com.utn.frba.relacionamientopersonas.service;
 
-
+/*
 import com.utn.frba.relacionamientopersonas.controller.dto.UsuarioRegistro;
 import com.utn.frba.relacionamientopersonas.model.rol.Rol;
 import com.utn.frba.relacionamientopersonas.model.usuario.Usuario;
@@ -48,4 +48,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         return (UserDetails) new User (appUser.getNombreUsuario(), appUser.getPassword(), grantList);
 
     }
-}
+
+
+} */

@@ -59,6 +59,30 @@
                         <input type="text" id="nombre" th:name="nombre" class="input-text"
                             required/>
                      </div>
+                     <div class="form-row">
+                        <label for="Contraseña">Contraseña<span class="asterisco">*</span></label>
+                        <input type="password" th:name="password" id="password" class="input-text" required >
+                     </div>
+                     <div class="form-row">
+                        <label for="Fecha de nacimiento">Fecha de Nacimiento<span class="asterisco">*</span></label>
+                        <input type="text" name="fecha de nacimiento" id="dni" class="input-text" >
+
+                     </div>
+                     <div class="form-row">
+                        <label for="Ciudad">Ciudad<span class="asterisco">*</span></label>
+                        <input type="text" name="ciudad" id="dni" class="input-text" >
+
+                     </div>
+                     <div class="form-row">
+                        <label for="Localidad de residencia">Localidad de residencia<span class="asterisco">*</span></label>
+                        <input type="text" name="localidad de residencia" id="dni" class="input-text" >
+
+                     </div>
+
+                     <div class="mb-3">
+                        <label for="formFile" class="form-label">Foto <span class="asterisco">*</span></label>
+                        <input class="form-row" type="file" id="formFile">
+                     </div>
                      <div class="form-row-last">
                         <input type="submit" name="continuar" class="btn btn-info" value="CREAR CUENTA">
                      </div>
@@ -70,7 +94,8 @@
 
       </div>
    </div>
-
+   </div>
+   </div>
    <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
 
 </body>

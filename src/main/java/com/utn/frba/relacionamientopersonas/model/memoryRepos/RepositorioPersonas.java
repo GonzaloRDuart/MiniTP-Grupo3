@@ -11,7 +11,7 @@ import java.util.*;
 @Component
 public class RepositorioPersonas {
 
-  /*  @Autowired
+     @Autowired
     PersonaController personadb;
 
     private ArrayList<Persona> personas = new ArrayList<>();
@@ -33,5 +33,5 @@ public class RepositorioPersonas {
 
     public void addPersonas(Persona persona){
         this.personas.add(persona);
-    }*/
+    }
 }

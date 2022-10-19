@@ -4,22 +4,17 @@ import com.utn.frba.relacionamientopersonas.model.persona.Persona;
 import com.utn.frba.relacionamientopersonas.model.rol.Rol;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
 @Getter @Setter
 @Entity
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    private String nombreUsuario;
-
+    private Integer id;
+    private String nombre;
     private String password;
 
     private Boolean enable;
@@ -31,12 +26,19 @@ public class Usuario {
     @JoinTable(name = "roles_usuarios", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "rol_id"))
     private List<Rol> roles;
 
-    public Usuario(String nombreUsuario, String password, List<Rol> roles) {
-        this.nombreUsuario = nombreUsuario;
+    public Usuario(String nombre, String password, List<Rol> roles) {
+        this.nombre=nombre;
+        this.password=password;
+    }
+
+    public Usuario(String nombre, String password) {
+        this.nombre = nombre;
         this.password = password;
     }
 
     public Usuario() {
 
     }
+
+
 }

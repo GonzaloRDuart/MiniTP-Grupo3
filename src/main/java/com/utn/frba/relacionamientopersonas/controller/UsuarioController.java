@@ -1,8 +1,9 @@
 package com.utn.frba.relacionamientopersonas.controller;
 
 
-import com.utn.frba.relacionamientopersonas.controller.dto.UsuarioRegistro;
-import com.utn.frba.relacionamientopersonas.service.UserDetailsServiceImpl;
+import com.utn.frba.relacionamientopersonas.model.usuario.Usuario;
+import com.utn.frba.relacionamientopersonas.service.apiServices.UsuarioService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -10,31 +11,25 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.naming.Binding;
-import javax.validation.Valid;
 
 @Controller
 public class UsuarioController {
-
-    private UserDetailsServiceImpl usuarioServicio;
-
-    public UsuarioController(UserDetailsServiceImpl usuarioServicio) {
-        super();
-        this.usuarioServicio = usuarioServicio;
-    }
+    @Autowired
+    private UsuarioService usuarioServicio;
 
     @ModelAttribute("usuario")
-    public UsuarioRegistro retornarNuevoUsuarioRegistroDTO() {
-        return new UsuarioRegistro();
+    public Usuario retornarNuevoUsuarioRegistroDTO() {
+        return new Usuario();
     }
-
-    /*@GetMapping("/registrarse")
+/*
+    @GetMapping("/registrarse")
     public String mostrarFormularioDeRegistro() {
         return "registrarse";
     }*/
 
     @PostMapping("/registrarse")
-    public String registrarCuentaDeUsuario(@ModelAttribute("usuario") UsuarioRegistro registroDTO) {
-        usuarioServicio.guardar(registroDTO);
+    public String registrarCuentaDeUsuario(@ModelAttribute("usuario") Usuario usuario) {
+        usuarioServicio.saveUsuario(usuario);
         return "redirect:/registrarse?exito";
     }
 

@@ -3,7 +3,7 @@ package com.utn.frba.relacionamientopersonas.service.apiServices;
 import com.utn.frba.relacionamientopersonas.model.persona.Persona;
 
 import java.util.List;
-/*
+
 public interface IPersonaService {
     public List<Persona> getPersona();
 
@@ -12,4 +12,4 @@ public interface IPersonaService {
     public void deletePersona(Integer id);
 
     public Persona findPersona(Integer id);
-}*/
+}
