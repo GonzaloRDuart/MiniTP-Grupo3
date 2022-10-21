@@ -42,4 +42,14 @@ public class Delegacion {
     public void actualizarEstado(Estado estado) {
         this.estado = estado;
     }
+
+    public String toString() {
+        return "Delegacion{" +
+                    "id" + id +
+                    ", autorizante='" + autorizante.getNombre() + '\'' +
+                    ", autorizado='" + autorizado + '\'' +
+                    ", estado='" + estado + '\'' +
+                    '}';
+        }
+
 }

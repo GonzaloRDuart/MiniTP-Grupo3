@@ -99,4 +99,18 @@ public class Persona {
     public void setFoto(String foto) {
         this.foto = foto;
     }
+
+    public String toString() {
+        return "Persona{" +
+                "id" + id +
+                ", dni='" + dni + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", fechaNacimiento='" + fechaNacimiento + '\'' +
+                ", ciudad='" + ciudad + '\'' +
+                ", localidad='" + localidad + '\'' +
+                ", foto='" + foto + '\'' +
+                '}';
+    }
+
 }
