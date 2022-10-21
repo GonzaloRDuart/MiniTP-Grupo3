@@ -1,5 +1,7 @@
 package com.utn.frba.relacionamientopersonas.model.persona;
 
+import com.utn.frba.relacionamientopersonas.model.delegacion.Delegacion;
+import com.utn.frba.relacionamientopersonas.model.delegacion.Estado;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -112,5 +114,4 @@ public class Persona {
                 ", foto='" + foto + '\'' +
                 '}';
     }
-
 }

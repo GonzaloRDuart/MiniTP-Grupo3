@@ -14,6 +14,8 @@ public class RepositorioPersonas {
      @Autowired
     PersonaController personadb;
 
+     private Boolean actualizar;
+
     private ArrayList<Persona> personas = new ArrayList<>();
 
     private static RepositorioPersonas instance;
@@ -33,5 +35,13 @@ public class RepositorioPersonas {
 
     public void addPersonas(Persona persona){
         this.personas.add(persona);
+    }
+
+    public Boolean getActualizar() {
+        return actualizar;
+    }
+
+    public void setActualizar(Boolean actualizar) {
+        this.actualizar = actualizar;
     }
 }

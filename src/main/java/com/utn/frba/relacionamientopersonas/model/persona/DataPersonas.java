@@ -1,5 +1,6 @@
 package com.utn.frba.relacionamientopersonas.model.persona;
 
+import com.utn.frba.relacionamientopersonas.model.memoryRepos.RepositorioDelegaciones;
 import com.utn.frba.relacionamientopersonas.model.memoryRepos.RepositorioPersonas;
 
 import org.json.simple.parser.JSONParser;
@@ -21,7 +22,7 @@ public class DataPersonas {
 
     private static DataPersonas instance;
 
-    RepositorioPersonas r = RepositorioPersonas.getInstance();
+    RepositorioPersonas repositorioPersonas = RepositorioPersonas.getInstance();
     public static DataPersonas getInstance(){
         if(instance == null) instance = new DataPersonas();
         return instance;
@@ -85,8 +86,9 @@ public class DataPersonas {
 
         Persona p = new Persona(dni,nombre,apellido,fechaNacimiento,ciudad,localidad,foto);
 
-        r.addPersonas(p);
+        repositorioPersonas.addPersonas(p);
 
+        repositorioPersonas.getInstance().setActualizar(true);
     }
 
 

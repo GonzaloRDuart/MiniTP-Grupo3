@@ -1,8 +1,7 @@
 package com.utn.frba.relacionamientopersonas.model.delegacion;
 
-import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.utn.frba.relacionamientopersonas.model.usuario.Usuario;
-import org.hibernate.annotations.GenericGenerator;
+import com.utn.frba.relacionamientopersonas.model.usuario.UsuarioEstandar;
 
 import javax.persistence.*;
 
@@ -13,17 +12,25 @@ public class Delegacion {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @Transient //Many To Many
-    private Usuario autorizante;
+    private UsuarioEstandar autorizante;
     @Transient // Many To Many
-    private Usuario autorizado;
+    private UsuarioEstandar autorizado;
     @Enumerated
     private Estado estado;
+
+    public Delegacion(UsuarioEstandar autorizante, UsuarioEstandar autorizado, Estado estado){
+        this.autorizante = autorizante;
+        this.autorizado = autorizado;
+        this.estado = estado;
+    }
+
+    public Delegacion(){}
 
     public Usuario getAutorizante() {
         return autorizante;
     }
 
-    public void setAutorizante(Usuario autorizante) {
+    public void setAutorizante(UsuarioEstandar autorizante) {
         this.autorizante = autorizante;
     }
 
@@ -31,7 +38,7 @@ public class Delegacion {
         return autorizado;
     }
 
-    public void setAutorizado(Usuario autorizado) {
+    public void setAutorizado(UsuarioEstandar autorizado) {
         this.autorizado = autorizado;
     }
 

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-/*
+
 @Service
 public class DelegacionService implements IDelegacionService{
 
@@ -33,4 +33,4 @@ public class DelegacionService implements IDelegacionService{
         Delegacion delegacion = delegacionRepository.findById(id).orElse(null);
         return delegacion;
     }
-}*/
+}
