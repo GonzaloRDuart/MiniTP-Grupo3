@@ -36,6 +36,12 @@ public class Persona {
 
     public Persona(){}
 
+    public Persona(String dni, String nombre, String apellido){
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+
     public Persona(String dni, String nombre, String apellido, LocalDate fechaNacimiento, String ciudad, String localidad, String foto){
         this.dni = dni;
         this.nombre = nombre;

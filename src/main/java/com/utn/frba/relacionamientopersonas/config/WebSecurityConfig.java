@@ -32,6 +32,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                     .antMatchers(resources).permitAll()
                     .antMatchers("/","/index").permitAll()
                     .antMatchers("/registrarse").permitAll()
+                    .antMatchers("/validacion").permitAll()
                     .antMatchers("/menuUsuario").access("hasRole('USER')")
                     .anyRequest().authenticated()
                     .and()

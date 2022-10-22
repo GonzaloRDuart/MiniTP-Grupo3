@@ -18,13 +18,16 @@ import java.util.List;
 
 public class DataPersonas {
 
-    private String baseDeDatos;
+    private static String baseDeDatos;
 
     private static DataPersonas instance;
 
     RepositorioPersonas repositorioPersonas = RepositorioPersonas.getInstance();
-    public static DataPersonas getInstance(){
-        if(instance == null) instance = new DataPersonas();
+    public static DataPersonas getInstance() throws FileNotFoundException {
+        if(instance == null) {
+            instance = new DataPersonas();
+            instance.cargarBD();
+        }
         return instance;
     }
 
@@ -41,7 +44,16 @@ public class DataPersonas {
 
     public void actualizarUsuario(){}
 
-    public void crearPersona() {
+    public void cargarBD() throws FileNotFoundException {
+        this.setBaseDeDatos(new FileReader("baseDeDatos.json").toString());
+    }
+
+    public boolean existeDNI(String dni){
+        if(baseDeDatos.indexOf(dni)!=-1) return true;
+        else return false;
+    }
+
+    /*public void crearPersona() {
         JSONParser jsonParser;
         jsonParser = new JSONParser();
 
@@ -63,9 +75,9 @@ public class DataPersonas {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-    }
+    } */
 
-    public void parsePersonasObject(JSONObject persona) {
+    /*public void parsePersonasObject(JSONObject persona) {
 
         ArrayList<Persona> per = new ArrayList<>();
         JSONObject personaObject = (JSONObject) persona.get("persona");
@@ -89,7 +101,7 @@ public class DataPersonas {
         repositorioPersonas.addPersonas(p);
 
         repositorioPersonas.getInstance().setActualizar(true);
-    }
+    } */
 
 
 }

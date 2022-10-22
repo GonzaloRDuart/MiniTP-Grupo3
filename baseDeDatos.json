@@ -1,0 +1,23 @@
+[
+  {
+    "persona": {
+      "dni": "123456",
+      "nombre": "Yu",
+      "apellido": "Narukami"
+    }
+  },
+  {
+    "persona": {
+      "dni": "458751",
+      "nombre": "Tohru",
+      "apellido": "Adachi"
+    }
+  },
+  {
+    "persona": {
+      "dni": "512321",
+      "nombre": "Bad",
+      "apellido": "Bunny"
+    }
+  }
+]

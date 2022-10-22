@@ -9,10 +9,10 @@ import javax.xml.crypto.Data;
 
 public class CargaPersonasTest {
 
-    @Test
+    /*@Test
     public void cargaPersonas() throws Exception {
         DataPersonas.getInstance().crearPersona();
         RepositorioPersonas r = RepositorioPersonas.getInstance();
         Assertions.assertEquals(r.getPersonas().size(),2);
-    }
+    }*/
 }

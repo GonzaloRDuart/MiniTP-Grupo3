@@ -3,6 +3,7 @@ package com.utn.frba.relacionamientopersonas.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class AppController {
@@ -12,7 +13,7 @@ public class AppController {
         return "index";
     }
 
-    @GetMapping({"/iniciarSesion","/login"})
+    @GetMapping({"/iniciarSesion", "/login"})
     public String iniciarSesion() {
         return "iniciarSesion";
     }
@@ -27,4 +28,6 @@ public class AppController {
         return "registrarse";
     }
 
+    @GetMapping({"/validacion"})
+    public String validacion(){return "validacion";}
 }
