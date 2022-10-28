@@ -1,24 +1,13 @@
+
 [
   {
-    "persona": {
-      "dni": "123456",
-      "nombre": "Pablo",
-      "apellido": "Ortiz",
-      "fechaNacimiento": "1997-05-12",
-      "ciudad": "Tokyo",
-      "localidad": "Akihabara",
-      "foto": "https://www.atlus.com/p4dan/images/characters/c01_chara.png"
-    }
+    "dni": "123456",
+    "nombre": "Pablo",
+    "apellido": "Ortiz"
   },
   {
-    "persona": {
-      "dni": "458751",
-      "nombre": "Tohru",
-      "apellido": "Adachi",
-      "fechaNacimiento": "1985-05-05",
-      "ciudad": "Tokyo",
-      "localidad": "Akihabara",
-      "foto": "https://static.wikia.nocookie.net/megamitensei/images/0/0c/Adachi_P4U_Artwork.png/revision/latest/scale-to-width-down/250?cb=20190809165601&path-prefix=es"
-    }
+    "dni": "0101",
+    "nombre": "Kevin",
+    "apellido": "Ortiz"
   }
 ]
