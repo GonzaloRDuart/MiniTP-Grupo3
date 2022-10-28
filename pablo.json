@@ -1,0 +1,13 @@
+
+[
+  {
+    "dni": "123456",
+    "nombre": "Pablo",
+    "apellido": "Ortiz"
+  },
+  {
+    "dni": "0101",
+    "nombre": "Kevin",
+    "apellido": "Ortiz"
+  }
+]

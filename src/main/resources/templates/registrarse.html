@@ -87,7 +87,10 @@
                         <input type="submit" name="continuar" class="btn btn-info" value="CREAR CUENTA">
                      </div>
                   </form>
-
+                  <div th:if=${param.exito}>
+                     <div class="alert alert-info">Se ha registrado exitosamente a
+                        la aplicación</div>
+                  </div>
                </div>
             </div>
          </div>

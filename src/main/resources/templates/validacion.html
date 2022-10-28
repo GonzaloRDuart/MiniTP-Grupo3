@@ -66,6 +66,9 @@
                   <input type="submit" name="continuar" class="btn btn-info" value="CONTINUAR">
                </div>
             </form>
+             <div th:if="${param.error}" class="alert alert-danger" role="alert">
+                 El usuario no se encuentra en la base de datos.
+             </div>
          </div>
       </div>
    </div>

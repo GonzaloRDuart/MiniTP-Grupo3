@@ -16,18 +16,12 @@ import java.io.FileNotFoundException;
 public class UsuarioController {
     @Autowired
     private UsuarioService usuarioServicio;
-    @Autowired
-    private PersonaService personaService;
 
     @ModelAttribute("usuario")
     public Usuario retornarNuevoUsuarioRegistroDTO() {
         return new Usuario();
     }
 
-    @ModelAttribute("persona")
-    public Persona retornarNuevaPersona() {
-        return new Persona();
-    }
 /*
     @GetMapping("/registrarse")
     public String mostrarFormularioDeRegistro() {
@@ -37,17 +31,9 @@ public class UsuarioController {
     @PostMapping("/registrarse")
     public String registrarCuentaDeUsuario(@ModelAttribute("usuario") Usuario usuario) {
         usuarioServicio.saveUsuario(usuario);
-        return "redirect:/registrarse?exito";
+        return "redirect:/registrarse?exito=true";
     }
 
-    @PostMapping("/validacion")
-    public String validarDatosUsuario(@ModelAttribute("persona") Persona persona) {
-        if(persona.getNombre().equals("Pablo") && persona.getApellido().equals("Ortiz") &&
-        persona.getDni().equals("123456"))
-            return "redirect:/registrarse";
-        return "redirect:/index";
 
-
-    }
 
 }

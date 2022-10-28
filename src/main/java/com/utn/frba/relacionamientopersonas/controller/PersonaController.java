@@ -20,6 +20,10 @@ import java.util.Map;
 
 @Controller
 public class PersonaController {
+
+    @Autowired
+    PersonaService personaService;
+
     private final RepositorioPersonas repoPersonas;
     private final Handlebars handlebars;
 
@@ -28,7 +32,10 @@ public class PersonaController {
         this.handlebars = new Handlebars();
     }
 
-
+    @ModelAttribute("persona")
+    public Persona retornarNuevaPersona() {
+        return new Persona();
+    }
 
     @GetMapping(value = "/personas", produces = MediaType.TEXT_HTML)
     public ResponseEntity<String> obtenerVistaDeTodas(@RequestParam("sesion") String idSesion) throws IOException {
@@ -45,12 +52,6 @@ public class PersonaController {
         return ResponseEntity.status(200).body(html);
     }
 
-
-
-    @ModelAttribute("persona")
-    public Usuario retornarNuevaPersona() {
-        return new Usuario();
-    }
 
 
   /*  @Autowired
@@ -70,5 +71,14 @@ public class PersonaController {
             intefazPersona.savePersona(persona);
             return "La persona fue creada correctamente";
         }*/
+
+    @PostMapping("/validacion")
+    public String validarDatosUsuario(@ModelAttribute("persona") Persona persona) {
+        if(personaService.encontrarPersonaEnJson(persona)==true)
+            return "redirect:/registrarse";
+        return "redirect:/validacion?error=true";
+
+
     }
+}
 
