@@ -5,6 +5,8 @@ import com.github.jknack.handlebars.Template;
 import com.utn.frba.relacionamientopersonas.model.memoryRepos.RepositorioPersonas;
 import com.utn.frba.relacionamientopersonas.model.persona.Persona;
 
+import com.utn.frba.relacionamientopersonas.model.usuario.Usuario;
+import com.utn.frba.relacionamientopersonas.service.apiServices.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -26,6 +28,8 @@ public class PersonaController {
         this.handlebars = new Handlebars();
     }
 
+
+
     @GetMapping(value = "/personas", produces = MediaType.TEXT_HTML)
     public ResponseEntity<String> obtenerVistaDeTodas(@RequestParam("sesion") String idSesion) throws IOException {
 
@@ -43,8 +47,10 @@ public class PersonaController {
 
 
 
-
-
+    @ModelAttribute("persona")
+    public Usuario retornarNuevaPersona() {
+        return new Usuario();
+    }
 
 
   /*  @Autowired

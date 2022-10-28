@@ -36,6 +36,7 @@ public class Persona {
 
     public Persona(){}
 
+
     public Persona(String dni, String nombre, String apellido){
         this.dni = dni;
         this.nombre = nombre;

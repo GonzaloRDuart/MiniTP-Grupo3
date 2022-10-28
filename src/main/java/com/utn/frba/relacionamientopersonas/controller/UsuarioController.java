@@ -1,7 +1,9 @@
 package com.utn.frba.relacionamientopersonas.controller;
 
 
+import com.utn.frba.relacionamientopersonas.model.persona.Persona;
 import com.utn.frba.relacionamientopersonas.model.usuario.Usuario;
+import com.utn.frba.relacionamientopersonas.service.apiServices.PersonaService;
 import com.utn.frba.relacionamientopersonas.service.apiServices.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,10 +16,17 @@ import java.io.FileNotFoundException;
 public class UsuarioController {
     @Autowired
     private UsuarioService usuarioServicio;
+    @Autowired
+    private PersonaService personaService;
 
     @ModelAttribute("usuario")
     public Usuario retornarNuevoUsuarioRegistroDTO() {
         return new Usuario();
+    }
+
+    @ModelAttribute("persona")
+    public Persona retornarNuevaPersona() {
+        return new Persona();
     }
 /*
     @GetMapping("/registrarse")
@@ -31,11 +40,14 @@ public class UsuarioController {
         return "redirect:/registrarse?exito";
     }
 
-    @PostMapping("/validacion/post")
-    public String validarDatosUsuario(@PathVariable String dni, @PathVariable String nombre, @PathVariable String apellido) throws FileNotFoundException {
-        if(usuarioServicio.validarDatosUsuario(dni, nombre, apellido).getStatusCode().toString()=="201") return "redirect:/registrarse";
-        //o pantalla de error
-        else return "error";
+    @PostMapping("/validacion")
+    public String validarDatosUsuario(@ModelAttribute("persona") Persona persona) {
+        if(persona.getNombre().equals("Pablo") && persona.getApellido().equals("Ortiz") &&
+        persona.getDni().equals("123456"))
+            return "redirect:/registrarse";
+        return "redirect:/index";
+
+
     }
 
 }

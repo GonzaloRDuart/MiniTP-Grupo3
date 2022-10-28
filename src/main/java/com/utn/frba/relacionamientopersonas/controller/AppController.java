@@ -23,7 +23,7 @@ public class AppController {
         return "menuUsuario";
     }
 
-    @GetMapping({"/registrarse"})
+    @GetMapping({"/registrarse","/registrarse/"})
     public String registrarse() {
         return "registrarse";
     }
