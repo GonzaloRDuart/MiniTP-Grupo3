@@ -1,6 +1,7 @@
 package com.utn.frba.relacionamientopersonas.controller;
 
 
+import com.github.jknack.handlebars.internal.lang3.ObjectUtils;
 import com.utn.frba.relacionamientopersonas.model.persona.Persona;
 import com.utn.frba.relacionamientopersonas.model.usuario.Usuario;
 import com.utn.frba.relacionamientopersonas.service.apiServices.PersonaService;
@@ -22,14 +23,17 @@ public class UsuarioController {
         return new Usuario();
     }
 
-/*
-    @GetMapping("/registrarse")
+
+    @GetMapping("/registrarse/")
     public String mostrarFormularioDeRegistro() {
         return "registrarse";
-    }*/
+    }
 
     @PostMapping("/registrarse")
     public String registrarCuentaDeUsuario(@ModelAttribute("usuario") Usuario usuario) {
+        if(usuarioServicio.findUsuarioByName(usuario.getNombre())==true){
+            return "redirect:/registrarse?error=true";
+        }
         usuarioServicio.saveUsuario(usuario);
         return "redirect:/registrarse?exito=true";
     }

@@ -50,6 +50,14 @@ public class UsuarioService implements IUsuarioService{
         return usuario;
     }
 
+    public Boolean findUsuarioByName(String nombreBuscado) {
+        Usuario usuarioBuscado = usuarioRepository.findByNombre(nombreBuscado);
+        if (usuarioBuscado!=null){
+            return true;
+        }
+        return false;
+    }
+
     @Override
     public UserDetails loadUserByUsername(String nombre) throws UsernameNotFoundException {
       //Buscar el usuario con el repositorio y si no existe lanzar una exepcion

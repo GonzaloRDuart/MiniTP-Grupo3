@@ -1,6 +1,5 @@
 package com.utn.frba.relacionamientopersonas;
 
-import com.utn.frba.relacionamientopersonas.fileReader.JsonReader;
 import com.utn.frba.relacionamientopersonas.model.persona.Persona;
 import com.utn.frba.relacionamientopersonas.model.usuario.Usuario;
 import com.utn.frba.relacionamientopersonas.repository.UsuarioRepository;
