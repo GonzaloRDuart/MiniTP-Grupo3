@@ -11,20 +11,8 @@ public class RegistrarUsuarioService {
     private static RegistrarUsuarioService instance;
 
     private DataPersonas baseDeDatos;
-
-    public static  RegistrarUsuarioService getInstance() throws FileNotFoundException {
-        if(instance == null){
-            instance = new RegistrarUsuarioService();
-            instance.baseDeDatos = DataPersonas.getInstance();
-        }
-        return instance;
-    }
-
     public Usuario registrarUsuario(Persona persona){
         return null;
     }
 
-    public boolean validarDatosUsuario(String dni){
-        return baseDeDatos.existeDNI(dni);
-    }
 }

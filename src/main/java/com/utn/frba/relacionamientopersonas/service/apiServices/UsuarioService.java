@@ -65,12 +65,4 @@ public class UsuarioService implements IUsuarioService{
         return (UserDetails) new User(appUser.getNombre(), appUser.getPassword(), grantList);
     }
 
-    public ResponseEntity validarDatosUsuario(String dni, String nombre, String apellido) throws FileNotFoundException {
-        if(RegistrarUsuarioService.getInstance().validarDatosUsuario(dni)){
-            Persona nuevaPersona = new Persona(dni, nombre, apellido);
-            RepositorioPersonas.getInstance().addPersonas(nuevaPersona);
-            return ResponseEntity.status(201).body(nuevaPersona);
-        }
-        else return ResponseEntity.status(400).body(null);
-    }
 }
