@@ -30,4 +30,16 @@ public class AppController {
 
     @GetMapping({"/validacion"})
     public String validacion(){return "validacion";}
+
+    @GetMapping({"/actualizarDatos"})
+    public String actualizarDatos(){return "actualizarDatos";}
+
+    @GetMapping({"/autorizacion"})
+    public String autorizacion(){return "autorizacion";}
+
+    @GetMapping({"/estadoDelegacion"})
+    public String estadoDelegacion(){return "estadoDelegacion";}
+
+    @GetMapping({"/solicitudes"})
+    public String solicitudes(){return "solicitudes";}
 }
