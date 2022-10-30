@@ -34,6 +34,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                     .antMatchers("/registrarse").permitAll()
                     .antMatchers("/validacion").permitAll()
                     .antMatchers("/menuUsuario").permitAll()
+                    .antMatchers("/actualizarDatos").permitAll()
                     .anyRequest().authenticated()
                     .and()
                 .formLogin()
