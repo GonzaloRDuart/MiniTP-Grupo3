@@ -54,7 +54,7 @@
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.github.jknack</groupId> <!--templating engine elegido-->
+			<groupId>com.github.jknack</groupId>
 			<artifactId>handlebars</artifactId>
 			<version>4.3.0</version>
 		</dependency>

@@ -6,15 +6,26 @@ import com.utn.frba.relacionamientopersonas.model.memoryRepos.RepositorioDelegac
 import com.utn.frba.relacionamientopersonas.model.persona.Persona;
 import com.utn.frba.relacionamientopersonas.service.apiServices.DelegacionService;
 
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class UsuarioEstandar extends Usuario{
+
+    @OneToMany
     List<Delegacion> delegaciones;
 
     public UsuarioEstandar(Persona persona) {
         this.setPersona(persona);
         this.delegaciones = new ArrayList<>();
+    }
+
+    public UsuarioEstandar() {
+
     }
 
     public void aceptarDelegacion(Delegacion delegacion) {
@@ -26,11 +37,13 @@ public class UsuarioEstandar extends Usuario{
         RepositorioDelegaciones.getInstance().setActualizar(true);
     }
 
-    public void enviarDelegacion(UsuarioEstandar usuario) {
+    public Delegacion enviarDelegacion(UsuarioEstandar usuario) {
         Delegacion nuevaDelegacion = new Delegacion(this, usuario, Estado.EN_ESPERA);
         RepositorioDelegaciones.getInstance().addDelegacion(nuevaDelegacion);
         RepositorioDelegaciones.getInstance().setActualizar(true);
+        this.getDelegaciones().add(nuevaDelegacion);
         usuario.getDelegaciones().add(nuevaDelegacion);
+        return nuevaDelegacion;
     }
 
     public List<Delegacion> getDelegaciones() {

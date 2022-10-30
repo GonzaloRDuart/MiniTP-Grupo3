@@ -1,6 +1,7 @@
 package com.utn.frba.relacionamientopersonas.controller;
 
 
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +19,7 @@ public class AppController {
         return "iniciarSesion";
     }
 
-    @GetMapping({"/menuUsuario"})
+    @GetMapping({"/menuUsuario", "/menuUsuario.html"})
     public String menuUsuario() {
         return "menuUsuario";
     }
@@ -30,16 +31,4 @@ public class AppController {
 
     @GetMapping({"/validacion"})
     public String validacion(){return "validacion";}
-
-    @GetMapping({"/actualizarDatos"})
-    public String actualizarDatos(){return "actualizarDatos";}
-
-    @GetMapping({"/autorizacion"})
-    public String autorizacion(){return "autorizacion";}
-
-    @GetMapping({"/estadoDelegacion"})
-    public String estadoDelegacion(){return "estadoDelegacion";}
-
-    @GetMapping({"/solicitudes"})
-    public String solicitudes(){return "solicitudes";}
 }

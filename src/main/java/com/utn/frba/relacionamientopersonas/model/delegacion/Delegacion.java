@@ -11,9 +11,10 @@ public class Delegacion {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @Transient //Many To Many
+    @ManyToOne
     private UsuarioEstandar autorizante;
-    @Transient // Many To Many
+
+    @ManyToOne
     private UsuarioEstandar autorizado;
     @Enumerated
     private Estado estado;

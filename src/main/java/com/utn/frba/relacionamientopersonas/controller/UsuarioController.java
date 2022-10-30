@@ -3,8 +3,11 @@ package com.utn.frba.relacionamientopersonas.controller;
 
 import com.github.jknack.handlebars.internal.lang3.ObjectUtils;
 import com.utn.frba.relacionamientopersonas.model.memoryRepos.RepositorioPersonas;
+import com.utn.frba.relacionamientopersonas.model.memoryRepos.RepositorioUsuarios;
 import com.utn.frba.relacionamientopersonas.model.persona.Persona;
 import com.utn.frba.relacionamientopersonas.model.usuario.Usuario;
+import com.utn.frba.relacionamientopersonas.model.usuario.UsuarioEstandar;
+import com.utn.frba.relacionamientopersonas.service.apiServices.DelegacionService;
 import com.utn.frba.relacionamientopersonas.service.apiServices.PersonaService;
 import com.utn.frba.relacionamientopersonas.service.apiServices.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +17,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.FileNotFoundException;
 import java.time.LocalDate;
+import java.util.stream.Collectors;
 
 @Controller
 public class UsuarioController {
     @Autowired
     private UsuarioService usuarioServicio;
+
+    @Autowired
+    private DelegacionService delegacionService;
 
     @Autowired
     private PersonaService personaService;
@@ -61,12 +68,23 @@ public class UsuarioController {
 
     @PostMapping("/autorizacion")
     public void autorizacion(String nombreUsuario){
-        /* Generar Repositorio usuarios
-        RepositorioUsuarios repoUsuarios = RepositorioUsuarios.getInstance()
-        if(repoUsuarios.getUsuarios().any(usuario -> ususario.nombre() == nombreUsuario)){
-            usuarioEnSesionAct.enviarDelegacion(repoUsuarios.getUsuarios.find(usuario -> usuario.nombre() = nombreUsuario);
+        //Reemplazar al poder encontrar el usuario en sesion
+        UsuarioEstandar usuarioPrueba = new UsuarioEstandar(new Persona());
+        usuarioPrueba.setNombre("usuarioPrueba");
+        UsuarioEstandar usuarioEnSesionAct = new UsuarioEstandar(new Persona());
+        usuarioEnSesionAct.setNombre("usuarioEnSesionAct");
+        RepositorioUsuarios repoUsuarios = RepositorioUsuarios.getInstance();
+        repoUsuarios.addUsuario(usuarioPrueba);
+        usuarioServicio.saveUsuario(usuarioPrueba);
+        usuarioServicio.saveUsuario(usuarioEnSesionAct);
+        delegacionService.saveDelegacion(usuarioEnSesionAct.enviarDelegacion(usuarioPrueba));
+        if(repoUsuarios.getUsuarios().stream().anyMatch(usuario -> usuario.getNombre() == nombreUsuario)){
+            delegacionService.saveDelegacion(usuarioEnSesionAct.enviarDelegacion((UsuarioEstandar) repoUsuarios.getUsuarios().stream()
+                    .filter(usuario -> usuario.getNombre() == nombreUsuario)
+                    .collect(Collectors.toList())
+                    .get(0)));
         }
-        else error usuario no encontrado*/
+        //else caso de error usuario no encontrado
     }
 
 }

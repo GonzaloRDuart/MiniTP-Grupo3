@@ -10,8 +10,8 @@
       <link rel="stylesheet" type="text/css" href="../css/styles.css">
   
 </head>
-   <body class="main home ">      
-   
+   <body class="main home ">
+
 
       <div id="header">
          <div id="header-shadow">
@@ -26,14 +26,14 @@
                   </div>
                </div>
             </div>
-         </div>  
+         </div>
          <div class="jumbotron_bar">
             <div class="container">
             <div class="row"><div class="col-md-12">
             <ol class="breadcrumb">
                <li><a href="/">Inicio</a></li>
            <li><a href="./menuUsuario.html">Menú</a></li>
-       
+
                <li class="active">Estado Delegación</li>
             </ol>
          </div>
@@ -45,8 +45,15 @@
          <h1>ESTADO DE LAS DELEGACIONES</h1>
       </div>
 
-     
-        
+         <table class="table table-bordered table-striped">
+            {{#each delegaciones}}
+            <tr>
+               <td>{{autorizado.nombre}}</td>
+               <td>{{estado}}</td>
+            </tr>
+            {{/each}}
+         </table>
+
         <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
 
    </body>
