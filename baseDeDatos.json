@@ -3,21 +3,24 @@
     "persona": {
       "dni": "123456",
       "nombre": "Pablo",
-      "apellido": "Ortiz"
+      "apellido": "Ortiz",
+      "admin": 1
     }
   },
   {
     "persona": {
       "dni": "458751",
       "nombre": "Tohru",
-      "apellido": "Adachi"
+      "apellido": "Adachi",
+      "admin": 0
     }
   },
   {
     "persona": {
       "dni": "512321",
       "nombre": "Bad",
-      "apellido": "Bunny"
+      "apellido": "Bunny",
+      "admin": 0
     }
   }
 ]

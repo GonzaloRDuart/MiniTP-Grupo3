@@ -37,6 +37,10 @@ public class RepositorioPersonas {
         this.personas.add(persona);
     }
 
+    public void deletePersona(Persona persona){
+        if(personas.contains(persona)) personas.remove(personas.indexOf(persona));
+    }
+
     public Boolean getActualizar() {
         return actualizar;
     }

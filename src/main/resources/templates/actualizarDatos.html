@@ -12,6 +12,8 @@
 </head>
    <body class="main home ">
 
+   <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+
     <div id="header">
          <div id="header-shadow">
             <div id="header-container">
@@ -42,7 +44,6 @@
       </div>
 
       <div id="searcher" class="main-container">
-          <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
   <div class="buttons-body">
 
    <div class="form-v5">

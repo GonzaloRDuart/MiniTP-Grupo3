@@ -10,9 +10,9 @@
       <link rel="stylesheet" type="text/css" href="../css/styles.css">
   
 </head>
-   <body class="main home ">
-
-      <div id="header">
+   <body class="main home ">      
+   
+    <div id="header">
          <div id="header-shadow">
             <div id="header-container">
                <div id="header-content">
@@ -26,35 +26,48 @@
                </div>
             </div>
          </div>  
-         <div class="jumbotron_bar">
-            <div class="container">
-            <div class="row"><div class="col-md-12">
-            <ol class="breadcrumb">
-               <li><a href="/">Inicio</a></li>
-           <!--  <li><a href="">Registrarse </a></li>
-       -->
-               <li class="active">Menú</li>
-            </ol>
-         </div>
-      </div>
-      </div>
+          <div class="jumbotron_bar">
+      <div class="container">
+      <div class="row"><div class="col-md-12">
+      <ol class="breadcrumb">
+         <li><a href="/">Inicio</a></li>
+       <li><a href="./menuUsuario.html">Menú</a></li>
+ 
+         <li class="active">Autorización</li>
+      </ol>
+   </div>
+</div>
+</div>
+</div>
       </div>
 
+      <div id="searcher" class="main-container">
+  <div class="buttons-body">
 
-         <div class="buttons-menu">
-            <div class="buttons-content">
-            <div>
-            <a href="./actualizarDatos.html" class="btn btn-info button-update">ACTUALIZAR DATOS</a>
-            <a href="./estadoDelegacion.html" class="btn btn-info button-update">ESTADO DELEGACIÓN</a>
-         </div>
-         <div>
-            <a href="./autorizacion.html" class="btn btn-info button-update">INICIAR DELEGACIÓN</a>
-            <a href="./solicitudes.html" class="btn btn-info button-update">SOLICITUDES</a>
+   <div class="form-v5">
+      <div class="page-content">
+         <div class="form-v5-content">
+            <form class="form-detail" action="#" method="post">
+               <h2>Autorice a otro usuario</h2>
+               <div class="form-row">
+                  <label for="Usuario">Usuario<span class="asterisco">*</span> </label>
+                  <input type="text" name="usuario" id="nombre" class="input-text" required>
+               </div>
+
+
+               <div class="form-row-last">
+                  <input  type="submit" name="continuar" class="btn btn-info" value="AUTORIZAR">
+               </div>
+            </form>
          </div>
       </div>
-         </div>
+   </div>
 
-     
+    </div>
+</div>
+      </div>
+
+        </div>
         
         <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
 

@@ -36,6 +36,6 @@ public class PersonaService implements IPersonaService {
         return persona;
     }
     public Boolean encontrarPersonaEnJson(Persona personaBuscada){
-      return dataPersonas.encontrarPersonaEnJson(personaBuscada);
+      return dataPersonas.encontrarPersonaEnJson2(personaBuscada);
     }
 }

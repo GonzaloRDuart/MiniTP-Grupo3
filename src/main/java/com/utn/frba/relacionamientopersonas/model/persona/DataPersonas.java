@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 @Component
 @Getter @Setter
@@ -30,13 +31,15 @@ public class DataPersonas {
     private static DataPersonas instance;
 
     RepositorioPersonas repositorioPersonas = RepositorioPersonas.getInstance();
+
     public List<Persona> lecturaJson() {
         final ObjectMapper objectMapper = new ObjectMapper();
         List<Persona> personas = null;
         try {
             personas = objectMapper.readValue(
                     new File("personas.json"),
-                    new TypeReference<List<Persona>>(){});
+                    new TypeReference<List<Persona>>() {
+                    });
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -44,8 +47,24 @@ public class DataPersonas {
         return personas;
     }
 
-    public Boolean encontrarPersonaEnJson(Persona personaBuscada){
+    public Boolean encontrarPersonaEnJson(Persona personaBuscada) {
         List<Persona> personas = lecturaJson();
         return personas.stream().anyMatch(persona -> persona.getDni().equals(personaBuscada.getDni()));
+    }
+
+    //Revisar que conviene, a mi de la otra manera no me funcionó.
+    public Boolean encontrarPersonaEnJson2(Persona personaBuscada) {
+        File jsonFile = new File("baseDeDatos.json");
+        Scanner myReader = null;
+        String data = null;
+        try {
+            myReader = new Scanner(jsonFile);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        while (myReader.hasNextLine()) {
+            data += myReader.nextLine();
+        }
+        return data.contains("\""+personaBuscada.getDni()+"\"");
     }
 }
